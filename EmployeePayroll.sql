@@ -37,3 +37,19 @@ UPDATE Employee_Payroll SET Gender='M' where EmpId=2;
 UPDATE Employee_Payroll SET Gender='F' where EmpId=3;
 UPDATE Employee_Payroll SET Gender='M' where EmpId=4;
 UPDATE Employee_Payroll SET Gender='M' where EmpId=5;
+
+--UC7 Ability to find sum, average, min, max and number of male and female employees
+SELECT SUM(Salary) from Employee_Payroll where Gender='F' group by Gender;
+SELECT SUM(Salary) from Employee_Payroll where Gender='M' group by Gender;
+
+SELECT AVG(Salary) from Employee_Payroll where Gender='F' group by Gender;
+SELECT AVG(Salary) from Employee_Payroll where Gender='M' group by Gender;
+
+SELECT MIN(Salary) from Employee_Payroll where Gender='F' group by Gender;
+SELECT MIN(Salary) from Employee_Payroll where Gender='M' group by Gender;
+
+SELECT MAX(Salary) from Employee_Payroll where Gender='F' group by Gender;
+SELECT MAX(Salary) from Employee_Payroll where Gender='M' group by Gender;
+
+SELECT Count(Salary) from Employee_Payroll where Gender='F' group by Gender;
+SELECT Count(Salary) from Employee_Payroll where Gender='M' group by Gender;
