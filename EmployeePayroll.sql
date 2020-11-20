@@ -65,3 +65,19 @@ UPDATE Employee_Payroll set Phone_Number=9076543212, Employee_Address='Banglore'
 
 --UC9 Ability to extend Employee_Payroll table to have Basic Pay,Deductions,Taxable Pay,Income Tax,Net Pay
 ALTER TABLE Employee_Payroll Add Basic_Pay money null default 0,Deductions money null default 0,Taxable_Pay money null default 0,Income_Tax money null default 0,Net_Pay money null default 0;
+
+--UC10 Ability to make Terisa as part of Sales and Marketing Department
+UPDATE Employee_Payroll set Basic_Pay=48652,Deductions=24785,Taxable_Pay=12874,Income_Tax=18712,Net_Pay=587542 where EmpId=1;
+UPDATE Employee_Payroll set Basic_Pay=57172,Deductions=12854,Taxable_Pay=26589,Income_Tax=23987,Net_Pay=698745 where EmpId=2;
+UPDATE Employee_Payroll set Basic_Pay=84572,Deductions=11651,Taxable_Pay=18547,Income_Tax=21854,Net_Pay=732594 where EmpId=3;
+UPDATE Employee_Payroll set Basic_Pay=47885,Deductions=13587,Taxable_Pay=15698,Income_Tax=14732,Net_Pay=557964 where EmpId=4;
+UPDATE Employee_Payroll set Basic_Pay=32594,Deductions=22287,Taxable_Pay=18569,Income_Tax=14987,Net_Pay=387532 where EmpId=5;
+
+INSERT INTO Employee_Payroll
+(EmpName, Salary, Start_Date, Gender, Phone_Number, Employee_Address, Department, Basic_Pay, Deductions, Taxable_Pay, Income_Tax, Net_Pay) 
+VALUES('Terisa', 450000, '2018-01-03', 'F', 9054731953, 'Mumbai', 'Marketing', 30000,10000,20000,50000,15000);
+
+SELECT * FROM Employee_Payroll;
+
+SELECT * FROM Employee_Payroll
+WHERE EmpName='Terisa';
