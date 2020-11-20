@@ -9,3 +9,11 @@ EmpName VARCHAR(20) NOT NULL,
 Salary MONEY NOT NULL,
 Start_Date DATE NOT NULL 
 );
+
+--UC3 Ability to create employee payroll data in the payroll service database as part of CURD Operation
+INSERT INTO Employee_Payroll(EmpName,Salary,Start_Date)
+VALUES('Apoorva',500000.00,'2020-09-12'),
+	  ('Bill',350000.00,'2019-09-25'),
+	  ('Terisa',400000.00,'2019-11-13'),
+	  ('Mark',600000.00,'2020-05-21'),
+	  ('Charlie',300000.00,'2018-03-07');
