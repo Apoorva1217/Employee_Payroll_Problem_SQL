@@ -17,3 +17,6 @@ VALUES('Apoorva',500000.00,'2020-09-12'),
 	  ('Terisa',400000.00,'2019-11-13'),
 	  ('Mark',600000.00,'2020-05-21'),
 	  ('Charlie',300000.00,'2018-03-07');
+
+--UC4 Ability to retrieve all the employee payroll data that is added to payroll service database
+SELECT * FROM Employee_Payroll;
