@@ -53,3 +53,12 @@ SELECT MAX(Salary) from Employee_Payroll where Gender='M' group by Gender;
 
 SELECT Count(Salary) from Employee_Payroll where Gender='F' group by Gender;
 SELECT Count(Salary) from Employee_Payroll where Gender='M' group by Gender;
+
+--UC8 Ability to extend Employee_Payroll data to store employee information like employee phone, address and department
+ALTER TABLE Employee_Payroll Add Phone_Number numeric(10),Employee_Address varchar(50) null default 'India',Department varchar(20) default 'Tester';
+
+UPDATE Employee_Payroll set Phone_Number=9876543212, Employee_Address='Pune',Department='Research' where EmpId=1;
+UPDATE Employee_Payroll set Phone_Number=9876543245, Employee_Address='Thane',Department='Testing' where EmpId=2;
+UPDATE Employee_Payroll set Phone_Number=9876743212, Employee_Address='Mumbai',Department='Development' where EmpId=3;
+UPDATE Employee_Payroll set Phone_Number=9126543212, Employee_Address='Nagpur',Department='Sales' where EmpId=4;
+UPDATE Employee_Payroll set Phone_Number=9076543212, Employee_Address='Banglore',Department='Analysis' where EmpId=5;
