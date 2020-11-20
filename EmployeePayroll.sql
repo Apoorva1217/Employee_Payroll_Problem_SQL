@@ -29,3 +29,11 @@ WHERE EmpName = 'Bill';
 SELECT * 
 FROM Employee_Payroll
 WHERE Start_Date between cast('2019-01-01' AS DATE) and SYSDATETIME();
+
+--UC6 Ability to add Gender to Employee Payroll Table and Update the Rows to reflect the correct Employee Gender
+ALTER TABLE Employee_Payroll Add Gender char(1);
+UPDATE Employee_Payroll SET Gender='F' where EmpId=1;
+UPDATE Employee_Payroll SET Gender='M' where EmpId=2;
+UPDATE Employee_Payroll SET Gender='F' where EmpId=3;
+UPDATE Employee_Payroll SET Gender='M' where EmpId=4;
+UPDATE Employee_Payroll SET Gender='M' where EmpId=5;
