@@ -20,3 +20,12 @@ VALUES('Apoorva',500000.00,'2020-09-12'),
 
 --UC4 Ability to retrieve all the employee payroll data that is added to payroll service database
 SELECT * FROM Employee_Payroll;
+
+--UC5 Ability to retrieve salary data for a particular employee as well as all employees who have joined in a particular data range from the payroll service database
+SELECT Salary 
+FROM Employee_Payroll
+WHERE EmpName = 'Bill';
+
+SELECT * 
+FROM Employee_Payroll
+WHERE Start_Date between cast('2019-01-01' AS DATE) and SYSDATETIME();
