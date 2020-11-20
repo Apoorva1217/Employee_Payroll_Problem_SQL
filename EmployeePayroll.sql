@@ -62,3 +62,6 @@ UPDATE Employee_Payroll set Phone_Number=9876543245, Employee_Address='Thane',De
 UPDATE Employee_Payroll set Phone_Number=9876743212, Employee_Address='Mumbai',Department='Development' where EmpId=3;
 UPDATE Employee_Payroll set Phone_Number=9126543212, Employee_Address='Nagpur',Department='Sales' where EmpId=4;
 UPDATE Employee_Payroll set Phone_Number=9076543212, Employee_Address='Banglore',Department='Analysis' where EmpId=5;
+
+--UC9 Ability to extend Employee_Payroll table to have Basic Pay,Deductions,Taxable Pay,Income Tax,Net Pay
+ALTER TABLE Employee_Payroll Add Basic_Pay money null default 0,Deductions money null default 0,Taxable_Pay money null default 0,Income_Tax money null default 0,Net_Pay money null default 0;
