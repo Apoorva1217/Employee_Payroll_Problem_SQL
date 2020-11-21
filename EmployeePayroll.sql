@@ -81,3 +81,37 @@ SELECT * FROM Employee_Payroll;
 
 SELECT * FROM Employee_Payroll
 WHERE EmpName='Terisa';
+
+--UC11 Draw the ER Diagram for Payroll Service DB
+
+--UC12 Implement the ER Diagram into Payroll Service DB
+--Create Employee Table with EmpId as Primary Key
+CREATE TABLE Employee(
+EmpId INT PRIMARY KEY IDENTITY(1,1),
+EmpName VARCHAR(20) NOT NULL,
+Employee_Address VARCHAR(50) NOT NULL,
+Gender VARCHAR(1) NOT NULL,
+Phone_Number NUMERIC(10) UNIQUE
+);
+
+--Create Department Table with DeptId as Primary Key and EmpiId as Foreign Key
+CREATE TABLE Department(
+EmpId int,
+DeptId INT PRIMARY KEY IDENTITY(101,1),
+DeptName VARCHAR(20) NOT NULL,
+DeptLocation VARCHAR(50) NOT NULL,
+FOREIGN KEY (EmpId) REFERENCES Employee(EmpId)
+);
+
+--Create Salary Table with SalaryId as Primary Key and EmpiId as Foreign Key
+CREATE TABLE Salary(
+EmpId int,
+SalaryId INT PRIMARY KEY IDENTITY(1,1),
+Salary MONEY NOT NULL,
+Basic_Pay MONEY NOT NULL,
+Deductions MONEY NOT NULL,
+Taxable_Pay MONEY NOT NULL,
+Income_Tax MONEY NOT NULL,
+Net_Pay MONEY NOT NULL,
+FOREIGN KEY (EmpId) REFERENCES Employee(EmpId)
+);
