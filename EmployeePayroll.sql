@@ -91,7 +91,8 @@ EmpId INT PRIMARY KEY IDENTITY(1,1),
 EmpName VARCHAR(20) NOT NULL,
 Employee_Address VARCHAR(50) NOT NULL,
 Gender VARCHAR(1) NOT NULL,
-Phone_Number NUMERIC(10) UNIQUE
+Phone_Number NUMERIC(10) UNIQUE,
+StartDate DATE NOT NULL
 );
 
 --Create Department Table with DeptId as Primary Key and EmpiId as Foreign Key
@@ -115,3 +116,26 @@ Income_Tax MONEY NOT NULL,
 Net_Pay MONEY NOT NULL,
 FOREIGN KEY (EmpId) REFERENCES Employee(EmpId)
 );
+
+--UC13 Ensure all retrieve queries done especially in UC 4, UC 5 and UC 7 are working with new table structure 
+
+--Refactor UC 4
+SELECT * FROM Employee;
+SELECT * FROM Department;
+SELECT * FROM Salary;
+
+--Refactor UC 5
+SELECT Salary 
+FROM Salary INNER JOIN Employee
+ON Salary.EmpId=Employee.EmpId
+WHERE EmpName = 'Bill';
+
+SELECT * 
+FROM Employee
+WHERE StartDate between cast('2019-01-01' AS DATE) and SYSDATETIME();
+
+--Refactor UC 7
+SELECT SUM(Salary) 
+FROM Salary INNER JOIN Employee 
+ON Salary.EmpId=Employee.EmpId
+WHERE Gender='F' GROUP BY Gender;
